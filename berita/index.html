@@ -1,0 +1,192 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="berita.css?v=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/tabler-icons@latest/iconfont/tabler-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+ </head>
+ <body>
+
+   <!-- section navbar -->
+    <section class="container-header">
+        <nav class="navbar" >
+        <header class="logo">
+          ABI
+          <p>Foundation</p>
+        </header>
+        <div class="navbar-menu">
+          <a href="../index.html" data-translate="HOME"><i class="bi bi-house-door"></i> Beranda</a>
+          <a href="../tentang-kami/index.html" data-translate="ABOUT US"><i class="bi bi-info-circle"></i> Tentang kami</a>
+          <div class="dropdown">
+            <button class="dropbtn" data-translate="MEDIA"> <i class="bi bi-suitcase-lg"></i> Media <i class="bi bi-chevron-down small"></i></button>
+            <div class="menu-content">
+              <a href="../berita/index.html" data-translate="NEWS"><i class="bi bi-newspaper"></i> Berita</a>
+              <a href="../liputan-media/index.html" data-translate="MEDIA COVERAGE"><i class="bi bi-newspaper"></i> Liputan media</a>
+              <a href="../publikasi/index.html" data-translate="PUBLICATIONS"> <i class="bi bi-image"></i> Publikasi</a>
+              <a href="#" data-translate="BLOG"><i class="bi bi-book"></i> Blog</a>
+            </div>
+          </div>
+          <a href="../hubungi-kami/index.html" data-translate="CONTACT US"><i class="bi bi-telephone"></i> Hubungi kami</a>
+        </div>
+        <div class="language-dropdown">
+          <button class="dropdown-toggle" id="langButton">
+            <img src="https://flagcdn.com/id.svg" class="flag-icon" id="current-flag" /> Bahasa
+          </button>
+          <div class="dropdown-menu" id="langMenu">
+            <a href="#" class="language-option active" data-lang="id">
+              <img src="https://flagcdn.com/id.svg" class="flag-icon" /> Bahasa Indonesia
+            </a>
+            <a href="#" class="language-option" data-lang="en">
+              <img src="https://flagcdn.com/gb.svg" class="flag-icon" /> English
+            </a>
+          </div>
+        </div>
+        </nav>
+    </section>
+
+    <section class="header">
+        <div class="text">
+          <i class="bi bi-newspaper"></i>
+            <h1>Berita ABI Foundation</h1>
+            <p>Ikuti perkembangan terbaru mengenai program, kegiatan, dan dampak 
+              positif yang kami ciptakan
+            </p>
+        </div>
+    </section>
+
+    <section class="news">
+      <div class="wrapper-berita">
+        <form action="" class="search-box">
+          <div class="input-wrapper">
+            <i class="bi bi-search"></i>
+            <input type="text" placeholder="Cari Berita">
+          </div>
+        </form>
+        <div class="All">
+           <i class="bi bi-funnel"></i>
+          <select name="" id="" class="select-box">
+            <option value="">Semua</option>
+            <option value="">Pendidikan</option>
+            <option value="">Keterampilan</option>
+            <option value="">Ekonomi</option>
+          </select>
+        </div>
+      </div>
+
+    <div class="wrapper-news">
+      <div class="news">
+        <!-- Card 1 -->
+        <div class="card">
+          <img src="../images/gambar_kreatif.jpg" alt="Gambar Berita">
+          <div class="isi-card">
+            <span>Pendidikan</span>
+            <a href="#"><h2>ABI Foundation memulai jalan baru</h2></a>
+            <p>Program beasiswa ini ditujukan untuk siswa berprestasi dari
+              keluarga kurang mampu di seluruh Indonesia...</p>
+            <div class="tanggal"><i class="bi bi-calendar-plus"></i> 25 02 2025</div>
+            <a href="#">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <img src="../images/gambar_kreatif.jpg" alt="Gambar Berita">
+          <div class="isi-card">
+            <span>Keterampilan</span>
+            <a href="#"><h2>Pelatihan Teknologi untuk Generasi Muda</h2></a>
+            <p>ABI Foundation memberikan pelatihan berbasis digital di berbagai kota...</p>
+            <div class="tanggal"><i class="bi bi-calendar-plus"></i> 18 03 2025</div>
+            <a href="#">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <img src="../images/gambar_kreatif.jpg" alt="Gambar Berita">
+          <div class="isi-card">
+            <span>Ekonomi</span>
+            <a href="#"><h2>Program Wirausaha Muda Berdaya</h2></a>
+            <p>Dorongan kewirausahaan untuk pemuda desa oleh ABI Foundation mulai bergulir...</p>
+            <div class="tanggal"><i class="bi bi-calendar-plus"></i> 12 04 2025</div>
+            <a href="#">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Card 4 (otomatis pindah ke baris baru) -->
+        <div class="card">
+          <img src="../images/gambar_kreatif.jpg" alt="Gambar Berita">
+          <div class="isi-card">
+            <span>Pendidikan</span>
+            <a href="#"><h2>Kelas Inovasi untuk Siswa SMK</h2></a>
+            <p>Kegiatan pelatihan coding dan desain grafis mulai diterapkan di SMK binaan...</p>
+            <div class="tanggal"><i class="bi bi-calendar-plus"></i> 02 05 2025</div>
+            <a href="#">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+  <div class="border-footer">
+    <div class="wrapper-footer">
+         <div class="site-left">
+      <div class="judul-footer">ABI Foundation </div>
+      <p class="text-footer-left">Membangun masa depan yag lebih baik melalui pendidikan, inovasi, dan pemberdayaan masyarakat.</p>
+    <div class="sosial-media">
+      <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-youtube"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="site-center">
+        <div class="judul-footer-sejoli">Hubungi Kami</div>
+        <p class="location"><i class="bi bi-geo-alt"></i> Jl.Inspirasi No.123, Kota Harapan, Indonesia</p>
+        <p class="call"><i class="bi bi-telephone"></i> +62 12 5676 765</p>
+        <p class="email"><i class="bi bi-envelope"></i> info@abifoundation.com</p>
+    </div>
+    <div class="site-right">
+      <div class="judul-footer-sejoli">Tautan Cepat</div>
+      <a href="#">Tentang Kami</a>
+      <a href="#">Berita Baru</a>
+      <a href="#">Galeri Kegiatan</a>
+      <a href="#">Blog Kami</a>
+      <a href="#">Kebijakan Privasi</a>
+      <a href="#">Syarat &amp; ketentuan</a>
+    </div>
+      </div>
+    </div>
+    <div class="copy-right">
+      © 2025 ABI Foundation. Semua Hak Cipta Dilindungi.
+    </div>    
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // default durasi animasi
+            once: true      // hanya animasi sekali
+        });
+    </script>
+ </body>
+ </html>
+ 
+ 

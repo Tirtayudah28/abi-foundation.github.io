@@ -1,0 +1,197 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="style.css?v=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/tabler-icons@latest/iconfont/tabler-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+ </head>
+ <body>
+
+     <!-- section navbar -->
+    <section class="container-header">
+        <nav class="navbar" >
+        <header class="logo">
+          ABI
+          <p>Foundation</p>
+        </header>
+        <div class="navbar-menu">
+          <a href="../index.html" data-translate="HOME"><i class="bi bi-house-door"></i> Beranda</a>
+          <a href="../tentang-kami/index.html" data-translate="ABOUT US"><i class="bi bi-info-circle"></i> Tentang kami</a>
+          <div class="dropdown">
+            <button class="dropbtn" data-translate="MEDIA"> <i class="bi bi-suitcase-lg"></i> Media <i class="bi bi-chevron-down small"></i></button>
+            <div class="menu-content">
+              <a href="../berita/index.html" data-translate="NEWS"><i class="bi bi-newspaper"></i> Berita</a>
+              <a href="../liputan-media/index.html" data-translate="MEDIA COVERAGE"><i class="bi bi-newspaper"></i> Liputan media</a>
+              <a href="../publikasi/index.html" data-translate="PUBLICATIONS"> <i class="bi bi-image"></i> Publikasi</a>
+              <a href="#" data-translate="BLOG"><i class="bi bi-book"></i> Blog</a>
+            </div>
+          </div>
+          <a href="../hubungi-kami/index.html" data-translate="CONTACT US"><i class="bi bi-telephone"></i> Hubungi kami</a>
+        </div>
+        <div class="language-dropdown">
+          <button class="dropdown-toggle" id="langButton">
+            <img src="https://flagcdn.com/id.svg" class="flag-icon" id="current-flag" /> Bahasa
+          </button>
+          <div class="dropdown-menu" id="langMenu">
+            <a href="#" class="language-option active" data-lang="id">
+              <img src="https://flagcdn.com/id.svg" class="flag-icon" /> Bahasa Indonesia
+            </a>
+            <a href="#" class="language-option" data-lang="en">
+              <img src="https://flagcdn.com/gb.svg" class="flag-icon" /> English
+            </a>
+          </div>
+        </div>
+        </nav>
+    </section>
+
+    <section class="header">
+        <div class="text">
+            <h1>Hubungi Kami</h1>
+            <p>Kami senang mendengar dari Anda! Baik itu pertanyaan, saran,
+                atau peluang kolaborasi.
+            </p>
+        </div>
+    </section>
+
+    <section class="pesan-kontak">
+        <div class="wrapper-callme">
+            <div class="form-pesan">
+                <div class="content-pesan">
+                    <h2>Kirim Pesan</h2>
+                    <form class="pesan" action="" method="post">
+                        <div class="nama-lengkap">
+                            <label for="nama">Nama lengkap</label>
+                            <input type="username" placeholder="Nama Lengkap">
+                        </div>
+                        <div class="alamat-email">
+                            <label for="email">Alamat Email</label>
+                            <input type="email" placeholder="email@your.com">
+                        </div>
+                        <div class="subjek">
+                            <label for="subjek">Subjek (Opsioanl)</label>
+                            <input type="text" placeholder="Subjek pesan Anda">
+                        </div>
+                        <div class="pesan">
+                            <label for="pesan">Pesan Anda</label>
+                            <textarea name="" id="" placeholder="Tulis pesan Anda di sini..."></textarea>
+                        </div>
+                        <div class="button-kirim">
+                            <button>Kirim Pesan <i class="bi bi-send"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="info-kontak">
+                <div class="content-kontak">
+                    <h2>Informasi Kontak</h2>
+                    <div class="field">
+                        <div class="alamat">
+                            <span><i class="bi bi-geo-alt"></i> Almat Kantor</span>
+                            <p>Jl. Inspirasi No. 123 Kota Harapan, Indonesia 12345</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="telepon">
+                            <span><i class="bi bi-telephone"></i> Telephone</span>
+                            <p>+62 812 5676 765</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="email">
+                            <span><i class="bi bi-geo-alt"></i> Email</span>
+                            <p>info@abifoundation.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="peta">
+        <h2>Temukan Lokasi Kami</h2>
+        <div class="lokasi" id="mapid"></div>
+    </section>
+
+    <!-- peta -->
+     <footer class="site-footer">
+  <div class="border-footer">
+    <div class="wrapper-footer">
+         <div class="site-left">
+      <div class="judul-footer">ABI Foundation </div>
+      <p class="text-footer-left">Membangun masa depan yag lebih baik melalui pendidikan, inovasi, dan pemberdayaan masyarakat.</p>
+    <div class="sosial-media">
+      <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-instagram"></i></a>
+        <a href=""><i class="bi bi-youtube"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="site-center">
+        <div class="judul-footer-sejoli">Hubungi Kami</div>
+        <p class="location"><i class="bi bi-geo-alt"></i> Jl.Inspirasi No.123, Kota Harapan, Indonesia</p>
+        <p class="call"><i class="bi bi-telephone"></i> +62 12 5676 765</p>
+        <p class="email"><i class="bi bi-envelope"></i> info@abifoundation.com</p>
+    </div>
+    <div class="site-right">
+      <div class="judul-footer-sejoli">Tautan Cepat</div>
+      <a href="#">Tentang Kami</a>
+      <a href="#">Berita Baru</a>
+      <a href="#">Galeri Kegiatan</a>
+      <a href="#">Blog Kami</a>
+      <a href="#">Kebijakan Privasi</a>
+      <a href="#">Syarat &amp; ketentuan</a>
+    </div>
+      </div>
+    </div>
+    <div class="copy-right">
+      © 2025 ABI Foundation. Semua Hak Cipta Dilindungi.
+    </div>    
+  </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // default durasi animasi
+            once: true      // hanya animasi sekali
+        });
+    </script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+    // Inisialisasi peta
+    const map = L.map('mapid').setView([-6.200000, 106.816666], 13); // ganti koordinat sesuai lokasi kantor
+
+    // Tambahkan layer peta dari OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Tambahkan marker lokasi kantor
+    L.marker([-6.200000, 106.816666]).addTo(map)
+        .bindPopup('<b>ABI Foundation</b><br>Jl. Inspirasi No.123, Kota Harapan')
+        .openPopup();
+
+    </script>
+
+ </body>
+ </html>
+ 
+ 
