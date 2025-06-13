@@ -1,3 +1,8 @@
+:root {
+  --primary: #002490;
+  --background: #FAFCF9;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +12,17 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #F9FAFB;
+  background-color: #ffff;
 }
 
 /* ========== NAVBAR WRAPPER ========== */
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  background-color: #fff;
-  padding: 20px 30px;
+  background-color: var(--background);
+  padding-left: 2rem;
+  padding-right: 2rem;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
@@ -26,19 +32,17 @@ body {
 }
 
 /* ========== LOGO ========== */
-.navbar-logo {
-  font-size: 25px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #0D47A1;
-  font-family: 'Poppins', sans-serif;
+.navbar-logo img {
+  width: 6rem;
+  height: 6rem;
+  margin-left: 2rem;
 }
 
 /* ========== NAV LINKS ========== */
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 10px;
   position: relative;
 }
 
@@ -46,7 +50,8 @@ body {
   text-decoration: none;
   color: black;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
+  text-align: center;
   padding: 10px 15px;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -55,7 +60,7 @@ body {
 .navbar-nav a:hover,
 .navbar-nav .dropbtn:hover {
   background-color: #d2e6f7;
-  color: #1d4ed8;
+  color: var(--primary);
 } 
 
 /* Dropdown terlihat saat class 'show' aktif */
@@ -66,15 +71,14 @@ body {
 /* Link aktif saat berada di halaman */
 .navbar-nav a.active {
   position: relative;
-  background-color: #0D47A1;
-  width: 100%;
+  background-color: var(--primary);
   color: white;
   font-weight: 600;
 }
 
 /* Link aktif di dropdown Media */
 .menu-content a.active {
-  background-color: #0D47A1;
+  background-color: var(--primary);
   color: white;
   font-weight: 500;
 }
@@ -90,13 +94,13 @@ body {
   cursor: pointer;
   padding: 10px 15px;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   gap: 6px;
 }
 
 .dropbtn:hover {
-  color: #1d4ed8;
+  color: var(--primary);
   background-color: #d2e6f7;
   cursor: pointer;
 }
@@ -108,8 +112,8 @@ body {
 .menu-content {
   display: none;
   position: absolute;
-  top: calc(100% + 2px);
-  left: 19rem;
+  top: calc(100% + 1px);
+  left: 16rem;
   background-color: white;
   padding: 10px 0;
   border-radius: 8px;
@@ -127,10 +131,11 @@ body {
   text-decoration: none;
   color: black;
   font-size: 15px;
+  text-align: start;
 }
 
 .menu-content a:hover {
-  color: #1d4ed8;
+  color: var(--primary);
   background-color: #d2e6f7;
 }
 
@@ -197,7 +202,7 @@ body {
 
 .dropdown-menu a:hover {
   background-color: #f3f4f6;
-  color: #0D47A1;
+  color: var(--primary);
 }
 
 .flag-icon {
@@ -210,7 +215,7 @@ body {
 /* === HAMBURGER TOGGLE === */
 .hamburger-wrapper {
   font-size: 28px;
-  color: #0D47A1;
+  color: var(--primary);
   display: none;
   cursor: pointer;
   position: absolute;
@@ -233,20 +238,15 @@ body {
 
 .background-hero {
   position: relative;
-  height: 600px;
-  overflow: hidden;
   width: 100%;
 }
 
 .background-hero img {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
+  height: 600px;
+  display: block;
+  position: relative; /* ubah dari absolute ke relative */
+  
 }
 
 .tagline {
@@ -519,14 +519,15 @@ body {
 /* Ikon di dalam lingkaran */
 .logo i,
 .logo svg {
-  color: #85b2f7;
-  font-size: 24px;
+  color: #002490;
+  font-size: 35px;
 }
 
 /* Supaya svg tidak mepet */
 .logo svg {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
+  margin-top: 0.5rem;
 }
 
 .conten-box h5 {
@@ -557,7 +558,7 @@ body {
 }
 
 .site-footer {
-  background-color: #0D47A1;
+  background-color: var(--primary);
   width: 100%;
   padding: 40px 55px;
   box-sizing: border-box;
@@ -892,17 +893,27 @@ body {
 
 /* mobile */
 @media (max-width: 480px) {
+  .navbar {
+    height: 110px;
+  }
   .wrapper-footer {
     flex-direction: column;
     gap: 0px;
   }
+  .container-isi-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .background-hero img {
+    height: 27rem;
+  }
   /* content */
   .background-hero {
-    width: 105%;
-    height: 400px;
+    width: 100%;
   }
   .all-content {
-    width: 105%;
+    width: 100%;
   }
   .tagline {
     width: 100%;
@@ -910,12 +921,12 @@ body {
     margin-top: 2rem;
   }
   .tagline h1 {
-    font-size: 45px;
-    line-height: 50px
+    font-size: 35px;
+    line-height: 35px
   }
   .tagline span {
-    width: 400px;
-    font-size: 20px;
+    width: 300px;
+    font-size: 15px;
     text-align: center;
   }
   .button-in-full {
@@ -946,54 +957,66 @@ body {
     align-items: center;
   }
   .slider-container {
-    margin-top: 5px;
-    margin-bottom: 2rem;
+    margin-top: -27rem;
+    padding: 20px;
+    margin-left: 0.5rem;
   }
 
   .swiper-slide img {
-    height: 200px;
+    height: 100px;
     width: 150px;
     object-fit: cover;
     object-position: -150px;
   }
   .swiper-slide-active img {
-  height: 400px;
+  height: 300px;
   width: 90%;
   margin-top: -5px;
   margin-left: 1rem;
+  object-position: -3.5rem;
   position: relative;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 .swiper .swiper-pagination {
   margin-right: 50px;
-  margin-top: 200px;
+  margin-top: -3rem ;
 }
 .wrapper-content .tentang-kami{
     display: flex;
     flex-direction: column;
-    margin-top: -20px;
+    margin-top: -30px;
   }
   .tentang-kami .images img {
-    width: 350px;
+    width: 430px;
     height: 250px;
-    margin-right: 70px
+    margin-right: 4rem;
+    margin-top: 1rem;
   }
   .tentang-kami .text {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-left: 5rem;
+  text-align: justify;
+  margin-top: 2rem;
+  padding-left: 2rem;
   width: 100%;
 }
-  .tentang-kami .text span {
+  .tentang-kami span {
   font-size: 1.5rem;
-  margin-top: 0.5rem;
+  font-weight: bold;
+  margin-left: -7rem;
+  color: var(--primary);
+  margin-top: 1rem;
 }
   .tentang-kami .text p {
-    font-size: 0.8rem;
-    width: 80%;
+    font-size: 1rem;
+    width: 93%;
     margin-top: -0.8rem;
   }
+
+.visi-misi {
+  margin-top: 0;
+}
   .judul-tagline h1 {
   font-size: 1.5rem;
 }
@@ -1006,7 +1029,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 90px;
+  gap: 50px;
   padding: 40px
 }
 .box-wrapper .container-box {
@@ -1080,30 +1103,28 @@ body {
 /* === Atur struktur navbar agar flex column dan dorong konten === */
 /* === Atur struktur navbar agar flex column dan dorong konten === */
 .navbar {
-    flex-direction: row;
-    align-items: flex-start;
-    padding-left: 1rem;
-    padding-bottom: 0.1rem;
-    background-color: white;
-    position: relative;
-    width: 105%; /* memastikan full screen di mobile */
-    box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap; /* ✅ ini memungkinkan elemen turun baris */
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  z-index: 1000;
   }
 
   .navbar-nav {
+    flex-basis: 100%;
+    order: 3; /* pastikan dia muncul di bawah */
     display: none;
     flex-direction: column;
     align-items: start;
-    margin-top: 5rem;
-    margin-left: -15rem;
-    width: 100%;
     gap: 5px;
-    background-color: white;
-    box-sizing: border-box;
-    max-height: 0;
+    background-color: #fff;
+    padding: 1rem 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-    display: flex;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
   }
 
   .menu-content {
@@ -1120,8 +1141,8 @@ body {
 
   .navbar-nav a,
   .dropbtn {
-    width: 100%;
     text-align: left;
+    width: 100%;
     padding: 15px 20px;
     font-size: 16px;
     border-radius: 10px;
@@ -1132,22 +1153,26 @@ body {
     z-index: 10;
   }
 
-  .navbar-extra {
-    justify-content: space-between;
-    margin-top: 1rem;
-    position: absolute;
-    margin-left: 12rem;
-  }
+  .navbar-logo {
+  flex: 1;
+}
+
+.navbar-extra {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem; 
+}
 
   .language-dropdown {
     position: relative;
-    margin-left: 5rem;
+    margin-left: 6rem;
   }
-  .navbar-logo {
-  font-size: 25px;
-  width: 14rem;
-  margin-top: 0.8rem;
-}
+ .navbar-logo img {
+   width: 6rem;
+   height: 6rem;
+   margin-left: 1rem;
+   margin-top: -0.9rem;
+ }
   .navbar-nav a.active {
   position: relative;
   background-color: #0D47A1;
