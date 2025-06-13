@@ -1,7 +1,3 @@
-<?php 
-    include '../header.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +6,7 @@
     <title>About us</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/tabler-icons@latest/iconfont/tabler-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
@@ -26,28 +23,29 @@
 </head>
 <body>
 
-     <!-- section navbar -->
-    <section class="container-header">
-        <nav class="navbar" >
-        <header class="logo">
-          ABI
-          <p>Foundation</p>
-        </header>
-        <div class="navbar-menu">
-          <a href="../index.html" data-translate="HOME"><i class="bi bi-house-door"></i> Beranda</a>
-          <a href="../tentang-kami/index.html" data-translate="ABOUT US"><i class="bi bi-info-circle"></i> Tentang kami</a>
-          <div class="dropdown">
-            <button class="dropbtn" data-translate="MEDIA"> <i class="bi bi-suitcase-lg"></i> Media <i class="bi bi-chevron-down small"></i></button>
-            <div class="menu-content">
-              <a href="../berita/index.html" data-translate="NEWS"><i class="bi bi-newspaper"></i> Berita</a>
-              <a href="../liputan-media/index.html" data-translate="MEDIA COVERAGE"><i class="bi bi-newspaper"></i> Liputan media</a>
-              <a href="../publikasi/index.html" data-translate="PUBLICATIONS"> <i class="bi bi-image"></i> Publikasi</a>
-              <a href="#" data-translate="BLOG"><i class="bi bi-book"></i> Blog</a>
-            </div>
+      <!-- section navbar -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">ABI Foundation</a>
+
+      <div class="navbar-nav">
+        <a href="../index.html" ><i class="bi bi-house-door"></i> Beranda</a>
+        <a href="index.html" ><i class="bi bi-info-circle"></i> Tentang kami</a> 
+        <div class="dropdown-container">
+          <button class="dropbtn" id="mediaToggle">
+            <i class="bi bi-suitcase-lg"></i> Media <i class="bi bi-chevron-down small"></i>
+          </button>
+          <div class="menu-content" id="mediaMenu">
+            <a href="../berita/index.html"><i class="bi bi-newspaper"></i> Berita</a>
+            <a href="../liputan-media/index.html"><i class="bi bi-newspaper"></i> Liputan media</a>
+            <a href="../publikasi/index.html"><i class="bi bi-image"></i> Publikasi</a>
+            <a href="#"><i class="bi bi-book"></i> Blog</a>
           </div>
-          <a href="../hubungi-kami/index.html" data-translate="CONTACT US"><i class="bi bi-telephone"></i> Hubungi kami</a>
         </div>
-        <div class="language-dropdown">
+        <a href="../hubungi-kami/index.html" ><i class="bi bi-telephone"></i> Hubungi kami</a>    
+      </div>
+
+     <div class="navbar-extra">
+          <div class="language-dropdown">
           <button class="dropdown-toggle" id="langButton">
             <img src="https://flagcdn.com/id.svg" class="flag-icon" id="current-flag" /> Bahasa
           </button>
@@ -59,14 +57,18 @@
               <img src="https://flagcdn.com/gb.svg" class="flag-icon" /> English
             </a>
           </div>
+          </div>
+          <div class="hamburger-wrapper">
+            <i class="bi bi-list" id="hamburger-icon"></i>
+            <i class="bi bi-x-lg" id="close-icon"></i>
+          </div>
         </div>
-        </nav>
-    </section>
+    </nav>
 
     <section class="header">
         <div class="text">
-            <h1>Tentang ABI Foundation</h1>
-            <p>Mengenal lebih dikit visi, misi, dan nilai-nilai yang menjadi landasan kami dalam berkontribusi
+            <h1 data-aos="fade-down" data-aos-delay="400">Tentang ABI Foundation</h1>
+            <p data-aos="fade-down" data-aos-delay="800">Mengenal lebih dikit visi, misi, dan nilai-nilai yang menjadi landasan kami dalam berkontribusi
                 untuk masyarakat
             </p>
         </div>
@@ -74,10 +76,10 @@
 
     <section class="our-story">
         <div class="content-story">
-            <div class="image-story">
+            <div class="image-story" data-aos="zoom-in" data-aos-delay="100">
                 <img src="../images/gambar1.jpg" alt="images-story">
             </div>
-            <div class="content-text">
+            <div class="content-text" data-aos="fade-left" data-aos-delay="100">
                 <h2>Cerita Kami</h2>
                 <p>ABI Foundation lahir dari sebuah mimpi sederhana: menciptakan perubahan positif yang nyata dan berkelanjutan. 
                     Didirikan pada tahun [Tahun Berdiri], kami memulai perjalanan dengan fokus pada [Fokus Awal], 
@@ -93,15 +95,15 @@
     </section>
 
     <div class="visi-misi-nilai">
-        <div class="judul"><h1>Visi, Misi, dan Nilai Kami</h1></div>
-        <div class="deskripsi">
+        <div class="judul" data-aos="fade-up" data-aos-delay="400"><h1>Visi, Misi, dan Nilai Kami</h1></div>
+        <div class="deskripsi" data-aos="fade-up" data-aos-delay="400">
             <p>Landasan fundamental yang memandu setiap tindakan dan keputusan
                 di ABI Foundation
             </p>
         </div>
         <div class="boxs-wrapper">
         <!-- Box PK -->
-        <div class="container-boxs aos-init aos-animate" data-aos="slide-up" data-aos-delay="100">
+        <div class="container-boxs" data-aos="fade-up" data-aos-delay="200">
             <div class="box-VK">
             <div class="contain-box">
                 <div class="in-logo">
@@ -115,7 +117,7 @@
         </div>
 
         <!-- Box APB -->
-        <div class="container-boxs aos-init aos-animate" data-aos="slide-up" data-aos-delay="200">
+        <div class="container-boxs" id="box-MK" data-aos="fade-up" data-aos-delay="400">
             <div class="box-MK">
             <div class="contain-box">
                 <div class="in-logo">
@@ -133,7 +135,7 @@
         </div>
 
         <!-- Box IS -->
-        <div class="container-boxs aos-init aos-animate" data-aos="slide-up" data-aos-delay="300">
+        <div class="container-boxs" id="box-IS" data-aos="fade-up" data-aos-delay="600">
             <div class="box-NNK">
             <div class="contain-box">
                 <div class="in-logo">
@@ -158,11 +160,11 @@
 
     <section class="tim">
         <div class="our-tim">
-            <h2>Tim Kami</h2>
-            <span>Individu-individu berdedikasi yang menjadi motor penggerak ABI Foundation.</span>
+            <h2 data-aos="fade-up" data-aos-delay="200">Tim Kami</h2>
+            <span data-aos="fade-up" data-aos-delay="400">Individu-individu berdedikasi yang menjadi motor penggerak ABI Foundation.</span>
             <div class="wrapper-box-profile">
 
-            <div class="images-profile">
+            <div class="images-profile" data-aos="fade-up" data-aos-delay="200">
                 <div class="profile">
                      <div class="image">
                         <img src="../images/foto-profile.jpg" alt="">
@@ -172,7 +174,7 @@
                     <p>Seorang visioner dengan dedikasi tinggi terhadap kemajuan sosial.</p>
                 </div>
             </div>
-            <div class="images-profile">
+            <div class="images-profile" data-aos="fade-up" data-aos-delay="500">
                 <div class="profile">
                      <div class="image">
                         <img src="../images/foto-profile.jpg" alt="">
@@ -182,7 +184,7 @@
                     <p>Seorang visioner dengan dedikasi tinggi terhadap kemajuan sosial.</p>
                 </div>
             </div>
-            <div class="images-profile">
+            <div class="images-profile" data-aos="fade-up" data-aos-delay="800">
                 <div class="profile">
                     <div class="image">
                         <img src="../images/foto-profile.jpg" alt="">
@@ -192,7 +194,7 @@
                     <p>Seorang visioner dengan dedikasi tinggi terhadap kemajuan sosial.</p>
                 </div>
             </div>
-            <div class="images-profile">
+            <div class="images-profile" data-aos="fade-up" data-aos-delay="1000">
                 <div class="profile">
                     <div class="image">
                         <img src="../images/foto-profile.jpg" alt="">
@@ -207,7 +209,7 @@
         </div>
     </section>
 
-    <footer class="site-footer">
+    <footer class="site-footer" data-aos="fade-up" data-aos-delay="200" style="margin-top: 5rem;">
   <div class="border-footer">
     <div class="wrapper-footer">
          <div class="site-left">
@@ -244,7 +246,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  <script src="tentang-kami.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
      AOS.init({

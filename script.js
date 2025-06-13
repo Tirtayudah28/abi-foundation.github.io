@@ -134,6 +134,18 @@ const swiper = new Swiper(".tripleSwiper", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true
+  },
+  breakpoints: {
+    0: { // untuk layar 0 - 480px
+      slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: false,
+    },
+    481: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      centeredSlides: true,
+    },
   }
 });
 
@@ -142,3 +154,76 @@ AOS.init({
   duration: 1000,
   once: true
 });
+
+  // Toggle dropdown menu saat tombol Media diklik
+  const dropBtn = document.getElementById('mediaToggle');
+  const menuContent = document.getElementById('mediaMenu');
+
+  let isMenuOpen = false;
+
+  dropBtn.addEventListener('click', function (e) {
+    e.stopPropagation(); // cegah window klik dari menutup menu saat ini diklik
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      menuContent.classList.add('show');
+    } else {
+      menuContent.classList.remove('show');
+    }
+  });
+
+  window.addEventListener('click', function (e) {
+    if (!dropBtn.contains(e.target) && !menuContent.contains(e.target)) {
+      menuContent.classList.remove('show');
+      isMenuOpen = false;
+    }
+  });
+
+
+  // Highlight link menu aktif berdasarkan URL
+  // Tandai menu aktif berdasarkan URL saat ini
+const allNavLinks = document.querySelectorAll('.navbar-nav a, .menu-content a');
+const currentUrl = window.location.href;
+
+allNavLinks.forEach(link => {
+  const href = link.getAttribute('href');
+  if (currentUrl.includes(href)) {
+    link.classList.add('active');
+  }
+});
+
+
+  // Hamburger Menu
+
+  // Mobile hamburger menu toggle
+const hamburgerIcon = document.getElementById("hamburger-icon");
+const closeIcon = document.getElementById("close-icon");
+const navbarNav = document.querySelector(".navbar-nav");
+
+hamburgerIcon.addEventListener("click", () => {
+  navbarNav.classList.add("show");
+  hamburgerIcon.style.display = "none";
+  closeIcon.style.display = "inline-block";
+});
+
+closeIcon.addEventListener("click", () => {
+  navbarNav.classList.remove("show");
+  hamburgerIcon.style.display = "inline-block";
+  closeIcon.style.display = "none";
+});
+
+// tidak restart
+const allMenuLinks = document.querySelectorAll(".navbar-nav a, .mobile-nav-panel a");
+
+allMenuLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (window.location.href.includes(link.getAttribute("href"))) {
+      e.preventDefault(); // cegah reload jika sudah di halaman itu
+    }
+  });
+});
+
+
+
+
+
