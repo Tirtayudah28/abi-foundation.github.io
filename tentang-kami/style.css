@@ -254,6 +254,9 @@ body {
 
 /* mobile */
 @media (max-width: 480px) {
+.header {
+  width: 105%;
+}
   .header .text h1{
     font-size: 2rem;
   }
@@ -264,56 +267,66 @@ body {
     display: flex;
     flex-direction: column;
   }
+  .content-story .image-story {
+    display: flex;
+    justify-content: center;
+    margin-left: 1.5rem;
+  }
   .content-story .image-story img {
-    width: 27rem;
-    height: 20rem;
+    width: 25rem;
+    height: 18rem;
+    display: flex;
   }
   .content-text {
-    margin-left: 0;
+    margin-left: 2rem;
     margin-top: 1rem;
   }
   .content-text h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   .content-text p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     width: 400px;
     text-align:start;
   }
   .visi-misi-nilai .judul {
     font-size: 0.9rem;
+    margin-left: 2rem;
   }
   .visi-misi-nilai .deskripsi p {
     width: 400px;
+    margin-left: 2rem;
+    font-size: 0.9rem;
   }
   .boxs-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 105%;
     gap: 2rem;
+    margin-left: 2rem;
   }
   .boxs-wrapper .container-boxs {
-    width: 90%;
+    width: 80%;
     height: 15rem;
 }
 .contain-box h5 {
   font-size: 1.5rem;
-  margin-top: -1rem;
+  margin-top: -1.9rem;
   color: #1d4ed8;
 }
 
 .contain-box p {
   font-size: 14px;
   color: #4b5563;
-  width: 400px;
+  width: 350px;
   margin-top: 5px;
 }
 .boxs-wrapper #box-MK {
-  height: 23rem;
+  height: 22rem;
 }
   .contain-box ul li {
-    margin-left: 1rem;
+    margin-left: 0.1rem;
     width: 22rem;
   }
 
@@ -321,21 +334,28 @@ body {
   height: 19rem;
 }
   .contain-box ul li {
-    margin-left: 1rem;
+    margin-left: 0.1rem;
     width: 22rem;
   }
   .our-tim h2{
-    font-size: 2rem;
+    font-size: 1.9rem;
+    margin-left: 2rem;
   }
   .our-tim span {
     text-align: center;
+    margin-left: 2rem;
+    width: 25rem;
   }
   .wrapper-box-profile {
     display:  flex;
     flex-direction: column;
+    align-items: center;
   }
   .images-profile {
-    width: 95%;
-    margin-left: 0.5rem;
+    width: 90%;
+    margin-left: 2rem;
+  }
+  .site-footer {
+    width: 105%;
   }
 }
