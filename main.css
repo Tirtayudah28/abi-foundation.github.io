@@ -952,7 +952,7 @@ body {
     margin-top: -2rem;
   }
   .tagline h1 {
-    font-size: 35px;
+    font-size: 30px;
     line-height: 40px;
   }
   .tagline span {
@@ -1047,7 +1047,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
     margin-top: -30px;
     width: 100%;
   }
@@ -1060,7 +1060,7 @@ body {
   .tentang-kami .images img {
     width: 100%;
     height: 250px;
-    margin-right: 4rem;
+    margin-right: 4.5rem;
     margin-top: 1rem;
   }
   .tentang-kami .text {
@@ -1069,17 +1069,16 @@ body {
   justify-content: flex-start;
   text-align: justify;
   margin-top: 1.5rem;
-  padding-left: 3rem;
-  padding-right: 1rem;
+  margin-left: 8rem;
+  padding-right: 3rem;
   letter-spacing: 0.5px;
   line-height: 30px;
 }
   .tentang-kami span {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-left: -6rem;
   color: var(--primary);
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
   .tentang-kami .text p {
     font-size: 1rem;
@@ -1224,7 +1223,7 @@ body {
   .hamburger-wrapper {
     display: block;
     z-index: 10;
-    margin-left: 25rem;
+    margin-left: 23rem;
     margin-top: -6rem;
   }
 
@@ -1240,7 +1239,7 @@ body {
 
   .language-dropdown {
     position: relative;
-    margin-left: 19rem;
+    margin-left: 17rem;
     margin-top: -6rem;
   }
  .navbar-logo img {
