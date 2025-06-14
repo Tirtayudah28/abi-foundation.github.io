@@ -37,6 +37,32 @@ body {
   z-index: 1000;
 }
 
+.navbar.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(250, 252, 249, 0.85); /* agak transparan */
+  backdrop-filter: blur(6px); /* efek blur transparansi */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* ======== Spacer untuk hindari patahan navbar ======== */
+.navbar-spacer {
+  height: 90px; /* atau sesuai tinggi navbar kamu */
+}
+
+.navbar.scrolled + .navbar-spacer {
+  display: block;
+}
+
+.navbar + .navbar-spacer {
+  display: none;
+}
+
+
+
 /* ========== LOGO ========== */
 .navbar-logo img {
   width: 6rem;
@@ -923,7 +949,7 @@ body {
   
   }
   .tagline {
-    width: 95%;
+    width: 100%;
     gap: 10px;
     margin-top: 2rem;
   }
@@ -943,7 +969,7 @@ body {
   .button-in-full .button-link {
     width: 200px;
     height: 40px;
-    margin-top: 6rem;
+    margin-top: 7rem;
     margin-bottom: 9rem;
     display: flex;
     align-items: center;
@@ -958,7 +984,7 @@ body {
   .button-in-full .button-link-2 {
     width: 130px;
     height: 40px;
-    margin-top: 6rem;
+    margin-top: 7rem;
     margin-bottom: 9rem;
     display: flex;
     align-items: center;
@@ -977,9 +1003,9 @@ body {
   }
   .swiper-slide-active img {
   height: 300px;
-  width: 85%;
+  width: 90%;
   margin-top: -5px;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   object-position: -3.5rem;
   position: relative;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
@@ -991,13 +1017,12 @@ body {
 .wrapper-content .tentang-kami{
     display: flex;
     flex-direction: column;
-    margin-top: -40px;
-    padding: 2rem;
+    margin-top: -30px;
   }
   .tentang-kami .images img {
-    width: 100%;
+    width: 430px;
     height: 250px;
-    margin-left: 0;
+    margin-right: 4rem;
     margin-top: 1rem;
   }
   .tentang-kami .text {
@@ -1006,8 +1031,8 @@ body {
   justify-content: flex-start;
   text-align: justify;
   margin-top: 2rem;
-  padding-left: 1rem;
-  width: 450px;
+  padding-left: 2rem;
+  width: 100%;
 }
   .tentang-kami span {
   font-size: 1.5rem;
@@ -1115,36 +1140,36 @@ body {
   flex-wrap: wrap; /* ✅ ini memungkinkan elemen turun baris */
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  background: #fff;
+  padding: 0.5rem;
+  background: var(--background);
   position: relative;
   z-index: 1000;
   }
 
+
   .navbar-nav {
-    flex-basis: 100%;
-    order: 3; /* pastikan dia muncul di bawah */
-    display: none;
-    flex-direction: column;
-    align-items: start;
-    gap: 5px;
-    background-color: #fff;
-    padding: 1rem 0;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease-in-out;
-  }
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  background-color: var(--background);
+  padding: 0;
+  width: 100%;
+}
+.navbar-nav.show {
+  max-height: 500px;
+  opacity: 1;
+  padding: 1rem 0;
+}
 
   .menu-content {
     position: relative;
     left: 0;
     box-shadow: none;
     margin-left: 1rem;
-  }
-
-  .navbar-nav.show {
-    display: flex;
-    max-height: 500px;
   }
 
   .navbar-nav a,
@@ -1159,6 +1184,8 @@ body {
   .hamburger-wrapper {
     display: block;
     z-index: 10;
+    margin-left: 25rem;
+    margin-top: -6rem;
   }
 
   .navbar-logo {
@@ -1168,12 +1195,13 @@ body {
 .navbar-extra {
   display: flex;
   align-items: center;
-  margin-right: 4rem; 
+  margin-right: 2rem; 
 }
 
   .language-dropdown {
     position: relative;
-    margin-left: 6rem;
+    margin-left: 19rem;
+    margin-top: -6rem;
   }
  .navbar-logo img {
    width: 6rem;
