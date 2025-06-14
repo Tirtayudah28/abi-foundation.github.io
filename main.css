@@ -443,6 +443,7 @@ body {
   align-content: flex-start;
   margin-top: 50px;
   width: 100%;
+  background-color: #F9FAFB;
 }
 
 .wrapper-content .tentang-kami {
@@ -451,7 +452,6 @@ body {
   position: relative;
   width: 100%;
   margin-top: 20px;
-  background-color: #F9FAFB;
   padding: 20px 0 20px 0;
 }
 
@@ -935,7 +935,7 @@ body {
     align-items: center;
   }
   .background-hero img {
-    height: 27rem;
+    height: 35rem;
   }
   /* content */
   .background-hero {
@@ -949,6 +949,35 @@ body {
   
   }
   .tagline {
+    margin-top: -2rem;
+  }
+  .tagline h1 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+  .tagline span {
+    font-size: 15px;
+    text-align: center;
+    width: 300px;
+  }
+  .button-in-full {
+  margin-top: -13rem;
+}
+
+.button-in-full .button-link {
+  background-color: #fff;
+  width: 210px;
+  height: 50px
+}
+
+.button-in-full .button-link-2 {
+  background-color: #fff;
+  width: 150px;
+  padding: 10px;
+  height: 50px
+}
+
+  /* .tagline {
     width: 100%;
     gap: 10px;
     margin-top: 2rem;
@@ -988,9 +1017,9 @@ body {
     margin-bottom: 9rem;
     display: flex;
     align-items: center;
-  }
+  } */
   .slider-container {
-    margin-top: -27rem;
+    margin-top: -20rem;
     padding: 20px;
     margin-left: 0.5rem;
   }
@@ -1017,10 +1046,19 @@ body {
 .wrapper-content .tentang-kami{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 2rem;
     margin-top: -30px;
+    width: 100%;
+  }
+  .wrapper-content .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   .tentang-kami .images img {
-    width: 430px;
+    width: 100%;
     height: 250px;
     margin-right: 4rem;
     margin-top: 1rem;
@@ -1030,14 +1068,16 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   text-align: justify;
-  margin-top: 2rem;
-  padding-left: 2rem;
-  width: 100%;
+  margin-top: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 30px;
 }
   .tentang-kami span {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-left: -7rem;
+  margin-left: -6rem;
   color: var(--primary);
   margin-top: 1rem;
 }
@@ -1141,7 +1181,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  background: var(--background);
+  background: transparent;
   position: relative;
   z-index: 1000;
   }
