@@ -141,7 +141,7 @@ const swiper = new Swiper(".tripleSwiper", {
       spaceBetween: 30,
       centeredSlides: false,
     },
-    481: {
+    490: {
       slidesPerView: 3,
       spaceBetween: 30,
       centeredSlides: true,
