@@ -935,7 +935,7 @@ body {
     align-items: center;
   }
   .background-hero img {
-    height: 35rem;
+    height: 40rem;
   }
   /* content */
   .background-hero {
@@ -1019,7 +1019,7 @@ body {
     align-items: center;
   } */
   .slider-container {
-    margin-top: -20rem;
+    margin-top: -17rem;
     padding: 20px;
     margin-left: 0.5rem;
   }
@@ -1066,11 +1066,9 @@ body {
   .tentang-kami .text {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
   text-align: justify;
   margin-top: 1.5rem;
-  margin-left: 8rem;
-  padding-right: 3rem;
+  width: 99%;
   letter-spacing: 0.5px;
   line-height: 30px;
 }
