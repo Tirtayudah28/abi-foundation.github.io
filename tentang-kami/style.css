@@ -94,13 +94,13 @@ body {
   padding: 60px 0 40px;
 }
 
-.visi-misi-nilai .judul {
+.judul h1{
   color: #1d4ed8;
   padding: 10px;
   font-weight: bold;
 }
 
-.visi-misi-nilai .deskripsi p {
+.deskripsi p {
   color: #4b5563;
   width: 700px;
   text-align: center;
@@ -257,6 +257,9 @@ body {
 .header {
   width: 105%;
 }
+  .header .text {
+    margin-left: -0.5rem;
+  }
   .header .text h1{
     font-size: 2rem;
   }
@@ -266,11 +269,14 @@ body {
   .our-story .content-story{
     display: flex;
     flex-direction: column;
+    display: flex;
+    justify-content: center;
+    margin-right: 1rem;
   }
   .content-story .image-story {
     display: flex;
     justify-content: center;
-    margin-left: 1.5rem;
+    margin-left: 1.3rem;
   }
   .content-story .image-story img {
     width: 25rem;
@@ -278,7 +284,7 @@ body {
     display: flex;
   }
   .content-text {
-    margin-left: 2rem;
+    margin-left: 1.3rem;
     margin-top: 1rem;
   }
   .content-text h2 {
@@ -291,45 +297,45 @@ body {
   }
   .visi-misi-nilai .judul {
     font-size: 0.9rem;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
   }
   .visi-misi-nilai .deskripsi p {
     width: 400px;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
     font-size: 0.9rem;
+    width: 300px
   }
   .boxs-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 105%;
+    width: 100%;
     gap: 2rem;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
   }
   .boxs-wrapper .container-boxs {
     width: 80%;
     height: 15rem;
 }
 .contain-box h5 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top: -1.9rem;
   color: #1d4ed8;
 }
 
 .contain-box p {
-  font-size: 14px;
+  font-size: 13px;
   color: #4b5563;
-  width: 350px;
+  width: 300px;
   margin-top: 5px;
+  margin-left: 1.3rem;
 }
 .boxs-wrapper #box-MK {
-  height: 22rem;
+  height: 23rem;
 }
-  .contain-box ul li {
-    margin-left: 0.1rem;
-    width: 22rem;
+  .box-MK .contain-box ul li {
+    width: 300px;
   }
-
   .boxs-wrapper #box-IS {
   height: 19rem;
 }
@@ -339,12 +345,19 @@ body {
   }
   .our-tim h2{
     font-size: 1.9rem;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
   }
   .our-tim span {
     text-align: center;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
     width: 25rem;
+  }
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  .profile span {
+    margin-right: 0.5rem;
   }
   .wrapper-box-profile {
     display:  flex;
@@ -353,7 +366,7 @@ body {
   }
   .images-profile {
     width: 90%;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
   }
   .site-footer {
     width: 105%;
