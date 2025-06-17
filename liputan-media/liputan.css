@@ -148,9 +148,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .header .text {
-    margin-top: -3rem;
-  }
   .text i {
     margin-top: 0;
   }
@@ -161,8 +158,11 @@ body {
   width: 400px;
   }
   .card {
-  width: 430px;
+  width: 90%;
   margin-top: 0;
   margin-bottom: 2rem;
 }
+  .wrapper-liputan {
+    padding: 1.5rem;
+  }
 }

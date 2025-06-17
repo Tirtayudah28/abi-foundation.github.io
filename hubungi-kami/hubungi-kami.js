@@ -34,6 +34,7 @@ allNavLinks.forEach(link => {
   }
 });
 
+
 // Hindari reload jika sudah di halaman yang sama
 allNavLinks.forEach(link => {
   link.addEventListener("click", (e) => {
@@ -42,3 +43,8 @@ allNavLinks.forEach(link => {
     }
   });
 });
+
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    navbar.classList.toggle('scrolled', window.scrollY > 1);
+  });

@@ -236,8 +236,8 @@ body {
 }
 
 @media (max-width: 480px) {
-  .header .text {
-    margin-top: -3rem;
+  .wrapper-news {
+    margin-bottom: -5rem;
   }
   .text i {
     margin-top: 0;
@@ -254,7 +254,7 @@ body {
     gap: 3rem;
   }
 .search-box {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .wrapper-berita {
@@ -264,9 +264,10 @@ body {
     margin-left: 1.5rem;
   }
 .input-wrapper {
-  width: 90%;
+  width: 80%;
 }
 .card {
   width: 90%;
 }
+  
 }

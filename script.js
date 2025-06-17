@@ -52,7 +52,7 @@ const translations = {
     "CONTACT US": "HUBUNGI KAMI",
 
     "tagline": "Selamat Datang di ABI Foundation",
-    "tagline2": "Membangun ekosistem anak muda kreatif dan berskill",
+    "tagline2": "Menginspirasi dan Memperdayakan",
     "learn-more": "Pelajari Lebih Lanjut",
     "contact-now": "Hubungi Kami",
 
