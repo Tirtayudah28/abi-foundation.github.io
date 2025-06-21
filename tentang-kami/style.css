@@ -255,7 +255,7 @@ body {
 /* mobile */
 @media (max-width: 480px) {
 .header {
-  width: 105%;
+  width: 100%;
 }
   .header .text {
     margin-left: -0.5rem;
@@ -267,44 +267,52 @@ body {
   width: 300px;
     font-size: 0.9rem;
   }
+  .our-story {
+    padding: 3rem;
+  }
   .our-story .content-story{
     display: flex;
     flex-direction: column;
     display: flex;
     justify-content: center;
-    margin-right: 1rem;
+    align-items: center;
+   
   }
   .content-story .image-story {
     display: flex;
     justify-content: center;
-    margin-left: 1.3rem;
+    width: 100%;
   }
   .content-story .image-story img {
-    width: 25rem;
     height: 18rem;
     display: flex;
   }
   .content-text {
-    margin-left: 1.3rem;
     margin-top: 1rem;
   }
   .content-text h2 {
     font-size: 1.7rem;
+    font-weight: 700;
   }
   .content-text p {
     font-size: 0.9rem;
-    width: 400px;
-    text-align:start;
+    width: 100%;
+    text-align: justify;
+    line-height: 1.5rem;
+    margin-top: -1rem;
+  }
+  .visi-misi-nilai {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   .visi-misi-nilai .judul {
-    font-size: 0.9rem;
-    margin-left: 0.5rem;
+    font-size: 1.5rem;
   }
   .visi-misi-nilai .deskripsi p {
-    width: 400px;
-    margin-left: 0.5rem;
+    width: 20rem;
     font-size: 0.9rem;
-    width: 300px
   }
   .boxs-wrapper {
     display: flex;
@@ -312,7 +320,6 @@ body {
     align-items: center;
     width: 100%;
     gap: 2rem;
-    margin-left: 0.5rem;
   }
   .boxs-wrapper .container-boxs {
     width: 80%;
@@ -344,13 +351,19 @@ body {
     margin-left: 0.1rem;
     width: 22rem;
   }
+  .our-tim {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
   .our-tim h2{
     font-size: 1.9rem;
-    margin-left: 0.5rem;
+    font-weight: 700;
   }
   .our-tim span {
     text-align: center;
-    margin-left: 0.5rem;
+    margin-top: -1rem;
     width: 25rem;
   }
   .profile {
@@ -358,7 +371,7 @@ body {
     align-items: center;
   }
   .profile span {
-    margin-right: 0.5rem;
+    margin-top: -0.1rem;
   }
   .wrapper-box-profile {
     display:  flex;
@@ -370,6 +383,6 @@ body {
     margin-left: 0.5rem;
   }
   .site-footer {
-    width: 105%;
+    width: 100%;
   }
 }

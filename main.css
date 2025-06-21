@@ -22,7 +22,7 @@ body {
 }
 
 /* ========== NAVBAR WRAPPER ========== */
-.navbar {
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,15 +35,15 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-}
+} */
 
-.navbar-right {
-  display: flex;              /* ✅ hanya di desktop */
-  justify-content: flex-end;
+/* .navbar-right {
+  display: flex;              ✅ hanya di desktop */
+  /* justify-content: flex-end;
   align-items: center;
   gap: 20px;
   width: 100%;
-}
+} */
 
 .navbar.scrolled {
   position: fixed;
@@ -57,8 +57,8 @@ body {
 }
 
 /* ======== Spacer untuk hindari patahan navbar ======== */
-.navbar-spacer {
-  height: 90px; /* atau sesuai tinggi navbar kamu */
+.navbar-spacer{
+  height: 2rem; /* atau sesuai tinggi navbar kamu */
 }
 
 .navbar.scrolled + .navbar-spacer {
@@ -72,24 +72,24 @@ body {
 
 
 /* ========== LOGO ========== */
-.navbar-logo img {
+/* .navbar-logo img {
   width: 6rem;
   height: 6 rem;
   margin-left: 2rem;
-}
+} */
 
 /* ========== NAV LINKS ========== */
-.navbar-nav {
+/* .navbar-nav {
   display: flex;
   align-items: center;
   gap: 10px;
   position: relative;
-}
+} */
 
 .navbar-nav a {
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   text-align: center;
   padding: 10px 15px;
@@ -99,28 +99,24 @@ body {
 
 .navbar-nav a:hover,
 .navbar-nav .dropbtn:hover {
-  background-color: #d2e6f7;
-  color: var(--primary);
+  background-color: #85b2f7 ;
+  color: #fff;
 } 
 
-/* Dropdown terlihat saat class 'show' aktif */
-/* .menu-content.show {
-  display: flex;
-} */
 
 /* Link aktif saat berada di halaman */
 .navbar-nav a.active {
   position: relative;
-  background-color: var(--primary);
-  color: white;
+  background-color: #002490;
+  color: #fff;
   font-weight: 600;
 }
 
 /* Link aktif di dropdown Media */
 .menu-content a.active {
-  background-color: var(--primary);
-  color: white;
-  font-weight: 500;
+  background-color: #002490;
+  color: #fff;
+  font-weight: 600;
 }
 
 
@@ -129,7 +125,7 @@ body {
   background-color: transparent;
   border: none;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   padding: 10px 15px;
@@ -175,7 +171,7 @@ body {
 }
 
 .menu-content a:hover {
-  color: var(--primary);
+  color: #ffff ;
   background-color: #d2e6f7;
 }
 
@@ -564,7 +560,7 @@ body {
 }
 
 .site-footer {
-  background-color: var(--primary);
+  background-color: #002490;
   width: 100%;
   padding: 40px 55px;
   box-sizing: border-box;
@@ -681,6 +677,43 @@ body {
   margin-left: 70px;
   border-radius: 10px;
 }
+@media (max-width: 1024px) {
+  /* Perbaikan umum tablet dan laptop kecil */
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .navbar-logo img {
+    margin-left: 1rem;
+  }
+  .content-text .text {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wrapper-content .tentang-kami {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+  }
+  .tentang-kami-img {
+    justify-content: center;
+    gap: 20px;
+  }
+  .tentang-kami .images img,
+  .tentang-kami .images2 img {
+    margin: 0;
+  }
+  .box-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box-wrapper .container-box {
+    width: 80%;
+    height: auto;
+  }
+}
+
 }
 @media (max-width: 1000px) {
   .background-hero {
@@ -758,6 +791,100 @@ body {
 }
 /* tablet */
 @media (max-width: 768px ) {
+
+  .navbar {
+  display: flex;
+  flex-wrap: wrap; /* ✅ ini memungkinkan elemen turun baris */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: transparent;
+  position: relative;
+  z-index: 1000;
+  }
+
+   .navbar-right {
+    display: block;           /* ✅ ubah jadi block di mobile */
+    position: relative;
+  }
+
+  .navbar-nav {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+  background-color: #fff;
+  padding: 0;
+  width: 100%;
+}
+.navbar-nav.show {
+  max-height: 700px;
+  opacity: 1;
+  padding: 1rem 0;
+}
+
+  .menu-content {
+    position: relative;
+    left: 0;
+    box-shadow: none;
+    margin-left: 1rem;
+  }
+
+  .navbar-nav a,
+  .dropbtn {
+    text-align: left;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .hamburger-wrapper {
+    display: block;
+    z-index: 10;
+    margin-left: 23rem;
+    margin-top: -6rem;
+  }
+
+  .navbar-logo {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.navbar-extra {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem; 
+}
+
+  .language-dropdown {
+    position: relative;
+    margin-left: 17rem;
+    margin-top: -6rem;
+  }
+ .navbar-logo img {
+   width: 6rem;
+   height: 6rem;
+   margin-left: 1rem;
+   margin-top: -0.9rem;
+ }
+  .navbar-nav a.active {
+  position: relative;
+  background-color: #0D47A1;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+}
+
+/* Link aktif di dropdown Media */
+.menu-content a.active {
+  background-color: #0D47A1;
+  color: white;
+  font-weight: 500;
+}
 
   .container-header {
     width: 100%;
@@ -924,8 +1051,8 @@ body {
 
 .sisi-kanan img {
   margin-top: 0;
-  width: 500px;
-  height: 300px;
+  width: 100%;
+  height: 18.7rem;
   box-shadow: 1px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -939,30 +1066,30 @@ body {
   justify-content: center;
 }
 .tagline h1 {
-  width: 500px;
-  font-size: 30px;
+  width: 100%;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #fff;
-  line-height: 45px;
+  line-height: 2.8rem;
 }
 
 .tagline span {
   color: #fff;
-  font-size: 13px;
-  width: 400px;
+  font-size: 0.875rem;
+  width: 25rem;
   text-align: center;
 }
 
 .button-in-full .button-link {
-  width: 200px;
-  height: 50px;
-  margin-top: 1rem;
+  width: 13rem;
+  height: 3rem;
+  margin-top: 0;
 }
 
 .button-in-full .button-link button {
   background: none;
   border: none;
-  font-size: 15px;
+  font-size: 0.9rem;
   color: #002490;
   font-weight: 700;
   text-align: center;
@@ -978,34 +1105,30 @@ body {
   
   .slider-container {
     margin-top: 0;
-    padding: 20px;
-    margin-left: 0.5rem;
+    position: relative;
+    left: 6%;
   }
-
   .swiper-slide img {
-    height: 100px;
-    width: 150px;
+    height: 18rem;
+    width: 80%;
     object-fit: cover;
     object-position: -150px;
   }
   .swiper-slide-active img {
-  height: 300px;
-  width: 90%;
-  margin-top: -5px;
+  height: 18rem;
+  width: 80%;
+  margin-top: 0.3rem;
   margin-left: 1rem;
   object-position: -3.5rem;
   position: relative;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
-.swiper .swiper-pagination {
-  margin-right: 50px;
-  margin-top: -3rem ;
-}
+  
 .wrapper-content {
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin-top: 50px;
+  margin-top: 1rem;
   width: 100%;
   background-color: #F9FAFB;
 }
@@ -1013,7 +1136,9 @@ body {
 .wrapper-content .tentang-kami {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 3rem;
+  padding-left: 6%;
+  padding-right: 6%;
 }
 
 .tentang-kami-img {
@@ -1022,40 +1147,51 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-left: 0;
 }
 
 .tentang-kami .images img {
-  width: 250px;
-  height: 200px;
+  width: 16rem;
+  position: relative;
+  height: 13rem;
   border-top-right-radius: 20%;
   border-bottom-left-radius: 20%;
-  margin-bottom: 100px;
-  margin-left: 3rem;
+  margin-bottom: 7.5rem;
+  margin-left: 16%;
 }
 
 .tentang-kami .images2 img {
-  width: 250px;
-  height: 150px;
+  width: 16rem;
+  height: 12rem;
   border-top-right-radius: 20%;
   border-bottom-left-radius: 20%;
-  margin-left: -9rem;
-  margin-top: 8rem;
+  margin-top: 10rem;
+  margin-left: -15%;
 }
 
 .content-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: relative;
+  right: 2%;
 }
 
 .content-text span {
-  margin-left: 0;
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  margin-left: 1rem;
 }
 
 .content-text .text {
-  font-size: 15px;
+  font-size: 1rem;
   text-align: justify;
-  width: 380px;
+  width: 100%;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  margin-top: -1rem;
 }
 
 .visi-misi {
@@ -1074,18 +1210,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
-  padding: 40px
+  gap: 3.2rem;
+  padding: 2.5rem;
 }
 .box-wrapper .container-box {
   width: 90%;
   border-radius: 10px;
-  height: 400px;
-  border-radius: 40px
+  height: 25rem;
+  border-radius: 2.5rem;
 }
   .isi-logo {
-  width: 70px;
-  height: 70px;  
+  width: 4.3rem;
+  height: 4.3rem;  
   margin-top: 1rem;
 }
 
@@ -1093,14 +1229,14 @@ body {
 .logo i,
 .logo svg {
   color: #0D47A1;
-  font-size: 50px;
+  font-size: 3.1rem;
 }
 
 /* Supaya svg tidak mepet */
 .logo svg {
-  width: 60px;
-  height: 60px;
-  margin-top: 20px;
+  width: 3.7rem;
+  height: 3.7rem;
+  margin-top: 1.25rem;
 }
 .conten-box h5 {
   font-size: 1.7rem;
@@ -1183,11 +1319,24 @@ body {
 }
 
   .menu-content {
-    position: relative;
+     position: relative;
+    top: 0;
     left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 0;
     box-shadow: none;
-    margin-left: 1rem;
+    margin-left: 0;
   }
+
+  .menu-content a {
+  width: 100%;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
 
   .navbar-nav a,
   .dropbtn {
@@ -1241,7 +1390,65 @@ body {
   color: white;
   font-weight: 500;
 }
-}
 
+.dropdown-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: black;
+    height: 3rem;
+    display: flex;
+  }
+
+  #mediaMenu {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: none;
+    flex-direction: column;
+    box-shadow: none !important;
+    margin-left: -100%;
+    margin-top: 4rem;
+    padding: 0;
+    width: 100%;
+    padding-inline: 1rem;
+    gap: 0.2rem;
+  }
+
+  #mediaMenu.show {
+    display: flex !important;
+  }
+
+  #mediaMenu a {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+  }
+
+  #mediaMenu a:hover {
+    background-color: #d2e6f7;
+    color: #000;
+  }
+
+  #mediaMenu a.active {
+    background-color: #002490;
+    color: #fff;
+  }
+
+  #mediaToggle {
+    font-weight: 600;
+  }
+}
 
 

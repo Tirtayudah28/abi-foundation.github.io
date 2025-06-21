@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,52 +27,9 @@
 <body>
 
       <!-- section navbar -->
-     <nav class="navbar">
-        <a href="#" class="navbar-logo"><img src="../assets/ABIFoundation.png" alt="logo"></a>
-
-      <div class="navbar-right">
-        <div class="navbar-nav">
-        <a href="../index.html" ><i class="bi bi-house-door"></i> Beranda</a>
-        <a href="index.html" ><i class="bi bi-info-circle"></i> Tentang kami</a> 
-        <div class="dropdown-container">
-          <button class="dropbtn" id="mediaToggle">
-            <i class="bi bi-suitcase-lg"></i> Media <i class="bi bi-chevron-down small"></i>
-          </button>
-          <div class="menu-content" id="mediaMenu">
-            <a href="../berita/index.html"><i class="bi bi-newspaper"></i> Berita</a>
-            <a href="../liputan-media/index.html"><i class="bi bi-newspaper"></i> Liputan media</a>
-            <a href="../publikasi/index.html"><i class="bi bi-image"></i> Publikasi</a>
-            <a href="#"><i class="bi bi-book"></i> Blog</a>
-          </div>
-        </div>
-        <a href="../hubungi-kami/index.html" ><i class="bi bi-telephone"></i> Hubungi kami</a>  
-        
-      </div>
-      
-      <div class="navbar-extra">
-          <div class="language-dropdown">
-          <button class="dropdown-toggle" id="langButton">
-            <img src="https://flagcdn.com/id.svg" class="flag-icon" id="current-flag" /> Bahasa
-          </button>
-          <div class="dropdown-menu" id="langMenu">
-            <a href="#" class="language-option active" data-lang="id">
-              <img src="https://flagcdn.com/id.svg" class="flag-icon" /> Bahasa Indonesia
-            </a>
-            <a href="#" class="language-option" data-lang="en">
-              <img src="https://flagcdn.com/gb.svg" class="flag-icon" /> English
-            </a>
-          </div>
-          </div>
-          <div class="hamburger-wrapper">
-            <i class="bi bi-list" id="hamburger-icon"></i>
-            <i class="bi bi-x-lg" id="close-icon"></i>
-          </div>
-        </div> 
-
-      </div>
-
-    </nav>
-    <div class="navbar-spacer"></div>
+     <?php 
+      include '../navbar.php';
+     ?>
 
     <section class="header">
         <div class="text">
