@@ -58,20 +58,18 @@ body {
 .liputan {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  justify-content: start;
-
+  gap: 3rem;
+  justify-content: center;
 }
 
 /* Membatasi lebar agar hanya muat 3 card per baris (300px * 3 + gap) */
 .card {
-  width: 410px;
+  width: 25.1rem;
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 20px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  margin-left: 25px;
   margin-top: 20px;
 }
 

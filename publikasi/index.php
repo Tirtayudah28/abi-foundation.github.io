@@ -51,47 +51,50 @@ if ($kategoriAktif === 'Semua') {
       include '../navbar.php';
     ?>
 
-    <section class="header">
+    <section class="header relative bg-[linear-gradient(to_right,rgba(240,248,255,0.6),white)] bg-[url('https://transparenttextures.com/patterns/cubes.png')] bg-repeat  py-24 px-4 text-center">
         <div class="text">
             <i class="bi bi-image" data-aos="fade-down" data-aos-delay="600"></i>
             <h1 data-aos="fade-up" data-aos-delay="600">Galeri Publikasi</h1>
             <p data-aos="fade-up" data-aos-delay="600">Dokumentasi visual berbagai kegiatan dan program inspiratif dari ABI Foundation
             </p>
         </div>
+    </section>
 
-        <div class="kategori" data-aos="zoom-in" data-aos-delay="600">
-          <div class="menu-kategori flex gap-2" id="kategoriFilter">
-            <button data-kategori="Semua" class="btn-kategori px-4 py-2 rounded shadow">Semua</button>
-
+        <div class="kategori " data-aos="zoom-in" data-aos-delay="600">
+          <div class="menu-kategori flex gap-2 " id="kategoriFilter">
+            <button data-kategori="Semua " class="btn-kategori px-4 py-2 rounded shadow text-center hover:text-white">Semua</button>
             <?php while ($row = mysqli_fetch_assoc($kategoriResult)) : ?>
               <button data-kategori="<?= htmlspecialchars($row['kategori']) ?>" 
-                      class="btn-kategori py-2 rounded shadow">
+                      class="btn-kategori py-2 px-2 rounded shadow text-center hover:text-white">
                   <?= htmlspecialchars($row['kategori']) ?>
               </button>
             <?php endwhile; ?>
           </div>
         </div>
-    </section>
+    
 
     
 <!-- Galeri Grid -->
-<div id="galeriContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-8 py-12 mt-[4rem] ">
+<div id="galeriContainer"
+  class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 px-4 py-12 mt-[1rem]">
   <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-  <div class="galeri-item relative group cursor-pointer aspect-square overflow-hidden rounded-md shadow transition-all duration-300"
-    data-kategori="<?= htmlspecialchars($row['kategori']) ?>"
-    onclick="showImageModal('../images/publikasi/<?= $row['gambar'] ?>', '<?= $row['judul_gambar'] ?>', '<?= $row['deskripsi'] ?>')">
-    
-    <img src="../images/publikasi/<?= $row['gambar'] ?>" alt="<?= $row['judul_gambar'] ?>" class="w-full h-full object-cover">
+    <div class="galeri-item relative group cursor-pointer aspect-square overflow-hidden rounded-md shadow transition-all duration-300"
+      data-kategori="<?= htmlspecialchars($row['kategori']) ?>"
+      onclick="showImageModal('../images/publikasi/<?= $row['gambar'] ?>', '<?= $row['judul_gambar'] ?>', '<?= $row['deskripsi'] ?>')">
 
-    <div class="absolute inset-0 flex flex-col justify-center items-center pointer-events-none">
-      <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-4 border-dashed border-white w-10 h-10 mb-1"></div>
-      <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-bold text-sm">
-        <?= htmlspecialchars($row['judul_gambar']) ?>
+      <img src="../images/publikasi/<?= $row['gambar'] ?>" alt="<?= $row['judul_gambar'] ?>" class="w-full h-full object-cover">
+
+      <div class="absolute inset-0 flex flex-col justify-center items-center pointer-events-none">
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border-4 border-dashed border-white w-10 h-10 mb-1"></div>
+        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white font-bold text-sm">
+          <?= htmlspecialchars($row['judul_gambar']) ?>
+        </div>
       </div>
     </div>
-  </div>
-<?php endwhile; ?>
+  <?php endwhile; ?>
 </div>
+
+
 
 
 <!-- Modal tampil gambar -->
@@ -115,43 +118,9 @@ if ($kategoriAktif === 'Semua') {
 </div>
 
 
-
-
-    <footer class="site-footer bg-blue-800" data-aos="fade-up" data-aos-delay="200" style="margin-top: 5rem;">
-  <div class="border-footer">
-    <div class="wrapper-footer">
-         <div class="site-left">
-      <div class="judul-footer">ABI Foundation </div>
-      <p class="text-footer-left">Membangun masa depan yag lebih baik melalui pendidikan, inovasi, dan pemberdayaan masyarakat.</p>
-    <div class="sosial-media">
-      <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-youtube"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-    <div class="site-center">
-        <div class="judul-footer-sejoli">Hubungi Kami</div>
-        <p class="location"><i class="bi bi-geo-alt"></i> Jl.Inspirasi No.123, Kota Harapan, Indonesia</p>
-        <p class="call"><i class="bi bi-telephone"></i> +62 12 5676 765</p>
-        <p class="email"><i class="bi bi-envelope"></i> info@abifoundation.com</p>
-    </div>
-    <div class="site-right">
-      <div class="judul-footer-sejoli">Tautan Cepat</div>
-      <a href="#">Tentang Kami</a>
-      <a href="#">Berita Baru</a>
-      <a href="#">Galeri Kegiatan</a>
-      <a href="#">Blog Kami</a>
-      <a href="#">Kebijakan Privasi</a>
-      <a href="#">Syarat &amp; ketentuan</a>
-    </div>
-      </div>
-    </div>
-    <div class="copy-right">
-      © 2025 ABI Foundation. Semua Hak Cipta Dilindungi.
-    </div>    
-  </footer>
+<?php 
+  include '../footer.php';
+?>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="publikasi.js"></script>

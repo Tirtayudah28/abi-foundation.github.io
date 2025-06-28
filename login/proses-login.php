@@ -4,22 +4,31 @@ include '../config/koneksi.php';
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
-    $password = $_POST['password']; // sesuaikan jika pakai password_hash
+    $password = $_POST['password'];
 
-    $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = $koneksi->query($query);
+    // Gunakan prepared statement untuk keamanan
+    $stmt = $koneksi->prepare("SELECT * FROM users_admin WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
+    // Cek apakah email ditemukan
+    if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        $_SESSION['login'] = true;
-        $_SESSION['role'] = $user['role']; // 'admin'
-        $_SESSION['email'] = $user['email'];
+        // Verifikasi password dengan password_hash()
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['login'] = true;
+            $_SESSION['role'] = $user['role']; // contoh: 'admin'
+            $_SESSION['email'] = $user['email'];
 
-        header("Location: ../dashboard/index.php");
-        exit();
+            header("Location: ../dashboard/index.php?pesan=login_berhasil");
+            exit();
+        } else {
+            echo "Password salah.";
+        }
     } else {
-        echo "Login gagal: email atau password salah.";
+        echo "Email tidak ditemukan.";
     }
 }
 ?>

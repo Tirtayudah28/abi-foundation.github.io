@@ -64,20 +64,34 @@
 //   if (button) button.click();
 // });
 
+
+
+// ========================
+// TRANSLASI BAHASA (opsional aktifkan)
+// ========================
+// const translations = { ... }  // (dibiarkan seperti semula)
+// const flags = { ... }
+// document.querySelectorAll('.language-option')... // tetap aman
+
+
+// ========================
 // SWIPER
-new Swiper(".tripleSwiper", {
-  slidesPerView: 3,
-  spaceBetween: 80,
-  centeredSlides: true,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
+// ========================
+var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
   breakpoints: {
     0: {
       slidesPerView: 1,
@@ -92,15 +106,21 @@ new Swiper(".tripleSwiper", {
   }
 });
 
-// AOS
+
+// ========================
+// AOS (Animasi on Scroll)
+// ========================
 AOS.init({ duration: 1000, once: true });
 
-// Dropdown Menu Media
+
+// ========================
+// MEDIA DROPDOWN TOGGLE
+// ========================
 const dropBtn = document.getElementById('mediaToggle');
 const menuContent = document.getElementById('mediaMenu');
 let isMenuOpen = false;
 
-dropBtn.addEventListener('click', function (e) {
+dropBtn?.addEventListener('click', function (e) {
   e.stopPropagation();
   isMenuOpen = !isMenuOpen;
   menuContent.classList.toggle('show', isMenuOpen);
@@ -113,7 +133,10 @@ window.addEventListener('click', function (e) {
   }
 });
 
-// Highlight Link Aktif
+
+// ========================
+// LINK AKTIF NAVBAR
+// ========================
 const allNavLinks = document.querySelectorAll('.navbar-nav a, .menu-content a');
 const currentUrl = window.location.href;
 
@@ -124,45 +147,59 @@ allNavLinks.forEach(link => {
   }
 });
 
-// Hamburger Menu
+
+// ========================
+// HAMBURGER MENU TOGGLE
+// ========================
 const hamburgerIcon = document.getElementById("hamburger-icon");
 const closeIcon = document.getElementById("close-icon");
 const navbarNav = document.querySelector(".navbar-nav");
 
-hamburgerIcon.addEventListener("click", () => {
+hamburgerIcon?.addEventListener("click", () => {
   navbarNav.classList.add("show");
   hamburgerIcon.style.display = "none";
   closeIcon.style.display = "inline-block";
 });
 
-closeIcon.addEventListener("click", () => {
+closeIcon?.addEventListener("click", () => {
   navbarNav.classList.remove("show");
   hamburgerIcon.style.display = "inline-block";
   closeIcon.style.display = "none";
 });
 
-// Navbar blur saat scroll
-window.addEventListener('scroll', function() {
+
+// ========================
+// NAVBAR SCROLL EFFECT
+// ========================
+window.addEventListener('scroll', function () {
   const navbar = document.querySelector('.navbar');
   navbar.classList.toggle('scrolled', window.scrollY > 1);
 });
 
 
-// Toggle dropdown Admin
-const adminBtn = document.getElementById('adminToggle');
-const adminMenu = document.getElementById('adminMenu');
-let isAdminOpen = false;
+// ========================
+// ADMIN DROPDOWN (khusus desktop)
+// ========================
+if (window.innerWidth >= 768) {
+  const adminBtn = document.getElementById('adminToggle');
+  const adminMenu = document.getElementById('adminMenu');
+  let isAdminOpen = false;
 
-adminBtn?.addEventListener('click', function (e) {
-  e.stopPropagation();
-  isAdminOpen = !isAdminOpen;
-  adminMenu.classList.toggle('show', isAdminOpen);
-});
+  adminBtn?.addEventListener('click', function (e) {
+    e.stopPropagation();
+    isAdminOpen = !isAdminOpen;
+    adminMenu.classList.toggle('show', isAdminOpen);
+  });
 
-window.addEventListener('click', function (e) {
-  if (!adminBtn.contains(e.target) && !adminMenu.contains(e.target)) {
-    adminMenu.classList.remove('show');
-    isAdminOpen = false;
-  }
-});
+  window.addEventListener('click', function (e) {
+    if (!adminBtn.contains(e.target) && !adminMenu.contains(e.target)) {
+      adminMenu.classList.remove('show');
+      isAdminOpen = false;
+    }
+  });
+}
+
+
+
+
 

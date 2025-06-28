@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="liputan.css?v=1.0" />
+    <link rel="stylesheet" href="liputan.css?v=3.0" />
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://unpkg.com/tabler-icons@latest/iconfont/tabler-icons.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
       include '../navbar.php';
     ?>
 
-    <section class="header">
+    <section class="header bg-[url('https://transparenttextures.com/patterns/cubes.png')] ">
         <div class="text">
           <i class="bi bi-newspaper" data-aos="fade-down" data-aos-delay="600"></i>
             <h1 data-aos="fade-up" data-aos-delay="600">Liputan Media</h1>
@@ -39,7 +39,7 @@
         </div>
     </section>
 
-     <div class="wrapper-liputan">
+     <div class="wrapper-liputan mb-[5rem]">
       <div class="liputan">
         <!-- Card 1 -->
         <div class="card">
@@ -96,41 +96,9 @@
       </div>
       </div>
 
-  <footer class="site-footer" data-aos="fade-up" data-aos-delay="200" style="margin-top: 5rem;">
-  <div class="border-footer">
-    <div class="wrapper-footer">
-         <div class="site-left">
-      <div class="judul-footer">ABI Foundation </div>
-      <p class="text-footer-left">Membangun masa depan yag lebih baik melalui pendidikan, inovasi, dan pemberdayaan masyarakat.</p>
-    <div class="sosial-media">
-      <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-youtube"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-    <div class="site-center">
-        <div class="judul-footer-sejoli">Hubungi Kami</div>
-        <p class="location"><i class="bi bi-geo-alt"></i> Jl.Inspirasi No.123, Kota Harapan, Indonesia</p>
-        <p class="call"><i class="bi bi-telephone"></i> +62 12 5676 765</p>
-        <p class="email"><i class="bi bi-envelope"></i> info@abifoundation.com</p>
-    </div>
-    <div class="site-right">
-      <div class="judul-footer-sejoli">Tautan Cepat</div>
-      <a href="#">Tentang Kami</a>
-      <a href="#">Berita Baru</a>
-      <a href="#">Galeri Kegiatan</a>
-      <a href="#">Blog Kami</a>
-      <a href="#">Kebijakan Privasi</a>
-      <a href="#">Syarat &amp; ketentuan</a>
-    </div>
-      </div>
-    </div>
-    <div class="copy-right">
-      © 2025 ABI Foundation. Semua Hak Cipta Dilindungi.
-    </div>    
-  </footer>
+  <?php 
+    include '../footer.php';
+  ?>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="liputan-media.js"></script>

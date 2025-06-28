@@ -51,6 +51,15 @@ body {
     margin-top: 10px;
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
 .wrapper-berita {
     margin-top: 30px;
     width: 100%;
@@ -151,19 +160,20 @@ body {
 .news {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
   justify-content: start;
+  margin-bottom: 2rem;
 }
 
 /* Membatasi lebar agar hanya muat 3 card per baris (300px * 3 + gap) */
 .card {
-  width: 390px;
+  width: 24.3rem;
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
-  margin-left: 20px;
+  margin-left: 1.8rem;
 }
 
 .card:hover {
@@ -173,8 +183,9 @@ body {
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 15rem;
   object-fit: cover;
+  object-position: 0 10%; 
 }
 
 .isi-card {
@@ -185,18 +196,18 @@ body {
   display: inline-block;
   background: linear-gradient(to right, #2563eb, #dbeafe);
   color: #1e3a8a;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   padding: 4px 10px;
   border-radius: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .isi-card a h2{
   font-size: 20px;
   color: #4e4e4e;
   margin-bottom: 12px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .isi-card a h2:hover {
@@ -204,13 +215,14 @@ body {
 }
 
 .isi-card p {
-  font-size: 14px;
+  font-size: 1rem;
   color: #4b5563;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .isi-card .tanggal {
-  font-size: 12px;
+  font-size: 0.9rem;
   color: #6b7280;
   margin-bottom: 10px;
 }
@@ -227,48 +239,10 @@ body {
   font-size: 14px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.5rem;
   transition: color 0.3s ease;
 }
 
 .isi-card a:hover {
   color: #0c47c3;
-}
-
-@media (max-width: 480px) {
-  .wrapper-news {
-    margin-bottom: -5rem;
-  }
-  .text i {
-    margin-top: 0;
-  }
-  .header .text h1{
-    font-size: 2rem;
-  }
-  .text p {
-  width: 400px;
-  }
-  .news {
-    display: flex; 
-    flex-direction: column;
-    gap: 3rem;
-  }
-.search-box {
-  margin-left: 0;
-}
-
-.wrapper-berita form {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1rem;
-    margin-left: 2rem;
-  }
-.input-wrapper {
-  width: 80%;
-}
-.card {
-  width: 90%;
-}
-  
 }

@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
+    header("Location: ../login?pesan=belum_login"); // arahkan ke halaman login
+    exit();
+}
+
+?>
+
+<?php if (isset($_GET['pesan']) && $_GET['pesan'] === 'login_berhasil') : ?>
+  <div
+    id="loginSuccess"
+    class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-100 border border-blue-400 text-blue-800 px-6 py-4 rounded-lg shadow-xl z-50"
+    role="alert"
+    data-aos="zoom-in"
+    data-aos-duration="800"
+  >
+    <strong>Selamat!</strong> Anda berhasil login.
+  </div>
+<?php endif; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +29,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" content="notranslate">
 
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -27,8 +51,7 @@
 </head>
 <body class="">
 <?php 
-    $base_url = "/ABI_Foundation/";
-    session_start();
+    // $base_url = "/ABI_Foundation/";
     include '../navbar.php'; 
 
     include '../config/koneksi.php';
@@ -53,12 +76,15 @@
 
 <div class="container-dashboard bg-none" style="margin-top: 10rem;">
     <div class="text-welcome m-8">
-        <h1 class="text-blue-800 font-bold text-[3rem] max-sm:text-[2.562]">ABI Foundation</h1>
-        <span class="text-slate-600 text-[1.2]">Selamat Datang, Admin</span>
+        <h1 class="text-blue-800 font-bold text-[3rem] max-sm:text-[2.562]" data-aos="fade-down" data-aos-delay="100">ABI Foundation</h1>
+        <span class="text-slate-600 text-[1.2]" data-aos="fade-right" data-aos-delay="300">Selamat Datang, Admin</span>
     </div>
-    <div class="wrapper-box m-8">
+
+    <div class="wrapper-box m-8 ">
+
         <div class="box-total flex flex-row gap-x-8 max-sm:flex-col max-sm:gap-y-8">
-            <div class="box-berita shadow-lg shadow-lg shadow-blue-200/50 flex flex-column justify-between p-8 max-sm:p-4 border border-neutral-50 rounded-xl w-80 max-sm:w-full">
+            <div class="box-berita shadow-lg shadow-lg shadow-blue-200/50 flex flex-column justify-between p-8 max-sm:p-4 
+            border border-neutral-50 rounded-xl w-80 max-sm:w-full" data-aos="fade-right" data-aos-delay="100">
                     <?php
 
                         // Ambil total berita dari database
@@ -68,17 +94,18 @@
                         $totalBerita = $data['total'];
                     ?>
                     <div class="site-left-box flex flex-col ">
-                    <span class="text-[1rem] font-medium text-slate-500">TOTAL BERITA</span>
+                    <span class="text-[1rem] font-bold text-stone-950">TOTAL BERITA</span>
                     <span class="text-[1.563rem] font-bold"><?= $totalBerita ?></span>
-                    <a href="../berita" class="mt-5 font-medium text-[0.9rem]">lihat detail</a>
+                    <a href="<?= $base_url ?>/berita" class="text-blue-600 text-sm font-medium mt-5 inline-block hover:underline">Lihat semua berita</a>
                 </div>
                 <div class="site-right-box ">
                     <div class="logo">
-                        <i class="bi bi-newspaper"></i>
+                        <i class="bi bi-newspaper text-3xl text-blue-600"></i>
                     </div>
                 </div>
             </div>
-            <div class="box-publikasi shadow-lg shadow-lg shadow-blue-200/50 flex flex-column justify-between p-8 max-sm:p-4 border border-neutral-50 rounded-xl w-80 max-sm:w-full">
+            <div class="box-publikasi shadow-lg shadow-lg shadow-blue-200/50 flex flex-column justify-between p-8 max-sm:p-4 
+            border border-neutral-50 rounded-xl w-80 max-sm:w-full" data-aos="fade-right" data-aos-delay="150">
                     <?php
 
                         // Ambil total publikasi dari database
@@ -88,17 +115,18 @@
                         $totalpublikasi = $data['total'];
                     ?>
                 <div class="site-left-box flex flex-col ">
-                    <span class="text-[1rem] font-medium text-slate-500">TOTAL ITEM GALERI</span>
+                    <span class="text-[1rem] font-bold text-stone-950">TOTAL ITEM GALERI</span>
                     <span class="text-[1.563rem] font-bold"><?= $totalpublikasi ?></span>
-                    <a href="../publikasi" class="mt-5 font-medium text-[0.9rem]">lihat detail</a>
+                    <a href="<?= $base_url ?>/publikasi" class="text-cyan-600 text-sm font-medium mt-5 inline-block hover:underline">Lihat galeri</a>
                 </div>
                 <div class="site-right-box ">
                     <div class="logo">
-                        <i class="bi bi-image"></i>
+                        <i class="bi bi-image text-3xl text-cyan-600"></i>
                     </div>
                 </div>
             </div>
-            <div class="box-user shadow-lg shadow-lg shadow-blue-200/50 flex flex-column justify-between p-8 max-sm:p-4 border border-neutral-50 rounded-xl w-80 max-sm:w-full">
+            <div class="box-user shadow-lg shadow-lg shadow-blue-200/50 flex flex-column justify-between p-8 max-sm:p-4 
+            border border-neutral-50 rounded-xl w-80 max-sm:w-full" data-aos="fade-right" data-aos-delay="200">
                     <?php
 
                         // Ambil total publikasi dari database
@@ -108,13 +136,13 @@
                         $totalusers = $data['total'];
                     ?>
                 <div class="site-left-box flex flex-col ">
-                    <span class="text-[1rem] font-medium text-slate-500">PENGGUNA TERDAFTAR</span>
+                    <span class="text-[1rem] font-bold text-stone-950">PENGGUNA TERDAFTAR</span>
                     <span class="text-[1.563rem] font-bold"><?= $totalusers ?></span>
-                    <a href="#" class="mt-5 font-medium text-[0.9rem]">lihat detail</a>
+                    <a href="#" class="text-yellow-600 text-sm font-medium mt-5 inline-block hover:underline">kelola pengguna</a>
                 </div>
                 <div class="site-right-box ">
                     <div class="logo">
-                        <i class="bi bi-people"></i>
+                        <i class="bi bi-people text-3xl text-yellow-600"></i>
                     </div>
                 </div>
             </div>
@@ -122,7 +150,7 @@
 
         <div class="box-input-media flex flex-row max-sm:flex-col gap-x-8 max-sm:gap-y-8 mt-8">
             
-             <div class="input-berita p-8 shadow-lg shadow-blue-200/50 border border-neutral-100 rounded-xl w-1/2 max-sm:w-full"> <!-- max-w-4xl mx-auto -->
+             <div class="input-berita p-8 shadow-lg shadow-blue-200/50 border border-neutral-100 rounded-xl w-1/2 max-sm:w-full" data-aos="zoom-in" data-aos-delay="50"> <!-- max-w-4xl mx-auto -->
                 <div class="site-top flex justify-between max-sm:flex-col">
                     <span class="text-[1.563rem] max-sm:text-[1.3rem] font-semibold">Kelola Berita/Blog</span>
                     <a href="<?= $base_url ?>berita/tambah-berita.php" class="bg-blue-600 hover:bg-blue-800 p-2 rounded-xl text-white text-center mt-2 max-sm:w-full">
@@ -135,8 +163,8 @@
                         <div class="berita-item flex justify-between items-center p-4 border rounded-md <?= $index > 2 ? 'hidden extra-berita' : '' ?>">
                             <span class="font-medium text-blue-900 width-[50%] truncate"><?= htmlspecialchars($b['judul']) ?></span>
                             <div class="flex gap-2">
-                                <a href="../berita/edit-berita.php?id=<?= $b['id'] ?>" class="text-blue-600 hover:underline text-base"><i class="bi bi-pencil-square text-lg"></i></a>
-                                <a href="../berita/hapus-berita.php?id=<?= $b['id'] ?>" onclick="return confirm('Hapus berita ini?')" class="text-red-600 hover:underline text-base"><i class="bi bi-trash3 text-lg"></i></a>
+                                <a href="<?= $base_url ?>/berita/edit-berita.php?id=<?= $b['id'] ?>" class="text-blue-600 hover:underline text-base"><i class="bi bi-pencil-square text-lg"></i></a>
+                                <a href="<?= $base_url ?>/berita/hapus-berita.php?id=<?= $b['id'] ?>" onclick="return confirm('Hapus berita ini?')" class="text-red-600 hover:underline text-base"><i class="bi bi-trash3 text-lg"></i></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -149,7 +177,7 @@
                 <?php endif; ?>
             </div>
 
-            <div class="input-publikasi p-8 shadow-lg shadow-blue-200/50 border border-neutral-100 rounded-xl w-1/2 max-sm:w-full">
+            <div class="input-publikasi p-8 shadow-lg shadow-blue-200/50 border border-neutral-100 rounded-xl w-1/2 max-sm:w-full" data-aos="zoom-in" data-aos-delay="50">
                 <div class="site-top flex justify-between max-sm:flex-col mt-[0.5rem]">
                     <span class="text-[1.563rem] max-sm:text-[1.3rem] font-semibold">Kelola Galeri</span>
                     <a href="<?= $base_url ?>publikasi/tambah-publikasi.php" class="w-60  max-sm:w-full max-sm:mt-4 bg-green-600 hover:bg-green-800 focus:outline-2 focus:outline-offset-2 focus:outline-green-500 active:bg-green-800 p-2 rounded-xl text-center">
@@ -163,8 +191,8 @@
                         <div class="berita-item flex justify-between items-center p-4 border rounded-md <?= $index > 2 ? 'hidden extra-publikasi' : '' ?>">
                             <span class="font-medium text-blue-900 width-[50%] truncate"><?= htmlspecialchars($c['judul_gambar']) ?></span>
                             <div class="flex gap-2">
-                                <a href="../publikasi/edit-publikasi.php?id=<?= $c['id'] ?>" class="text-blue-600 hover:underline text-base"><i class="bi bi-pencil-square text-lg"></i></a>
-                                <a href="../publikasi/hapus-publikasi.php?id=<?= $c['id'] ?>" onclick="return confirm('Hapus gambar ini?')" class="text-red-600 hover:underline text-base"><i class="bi bi-trash3 text-lg"></i></a>
+                                <a href="<?= $base_url ?>/publikasi/edit-publikasi.php?id=<?= $c['id'] ?>" class="text-blue-600 hover:underline text-base"><i class="bi bi-pencil-square text-lg"></i></a>
+                                <a href="<?= $base_url ?>/publikasi/hapus-publikasi.php?id=<?= $c['id'] ?>" onclick="return confirm('Hapus gambar ini?')" class="text-red-600 hover:underline text-base"><i class="bi bi-trash3 text-lg"></i></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -176,13 +204,13 @@
                 </div>
             </div>
         </div>
-        <div class="box-setting mt-8 w-full p-8 shadow-lg shadow-blue-200/50 border border-neutral-100 rounded-xl" style="margin-bottom: 100px;">
+        <div class="box-setting mt-8 w-full p-8 shadow-lg shadow-blue-200/50 border border-neutral-100 rounded-xl" style="margin-bottom: 100px;" data-aos="zoom-in" data-aos-delay="50">
             <div class="site-top">
                 <span class="text-[1.563rem] max-sm:text-[1.3rem] font-semibold">Pengaturan & Lainnya</span>
             </div>
             <div class="site-bottom mt-5">
                     <a href="#" class="border border-slate-300 p-2 px-3 hover:text-blue-300 hover:bg-slate-100 focus:outline-2 focus:outline-offset-2 focus:outline-slate-300 active:bg-slate-200  font-medium rounded-xl max-sm:text-[0.7rem]"><i class="bi bi-gear"></i> Pengaturan Website</a>
-                    <a href="#" class="border border-slate-300 p-2 px-3 hover:text-blue-300 hover:bg-slate-100 focus:outline-2 focus:outline-offset-2 focus:outline-slate-300 active:bg-slate-200 font-medium rounded-xl mx-2 max-sm:text-[0.7rem]"><i class="bi bi-people"></i> Kelola Pengguna</a>
+                    <a href="kelola-pengguna.php" class="border border-slate-300 p-2 px-3 hover:text-blue-300 hover:bg-slate-100 focus:outline-2 focus:outline-offset-2 focus:outline-slate-300 active:bg-slate-200 font-medium rounded-xl mx-2 max-sm:text-[0.7rem]"><i class="bi bi-people"></i> Kelola Pengguna</a>
                 </div>
             </div>
         </div>
@@ -230,6 +258,24 @@
             });
         }
     });
+
+//    pesan login
+  setTimeout(() => {
+    const alert = document.getElementById('loginSuccess');
+    if (alert) {
+      alert.style.transition = 'opacity 0.6s ease';
+      alert.style.opacity = '0';
+      setTimeout(() => alert.remove(), 600);
+    }
+  }, 4000);
+
+  // Hapus query string setelah load agar tidak muncul saat refresh
+  if (window.history.replaceState) {
+    const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    window.history.replaceState({ path: cleanUrl }, "", cleanUrl);
+  }
+
+
   </script>
   <script src="../script.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
