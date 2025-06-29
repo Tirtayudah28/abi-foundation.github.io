@@ -6,29 +6,36 @@ if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Gunakan prepared statement untuk keamanan
     $stmt = $koneksi->prepare("SELECT * FROM users_admin WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Cek apakah email ditemukan
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        // Verifikasi password dengan password_hash()
         if (password_verify($password, $user['password'])) {
+            if ($user['status'] !== 'aktif') {
+                $_SESSION['error'] = "Akun Anda nonaktif. Hubungi admin.";
+                header("Location: login.php");
+                exit;
+            }
+
             $_SESSION['login'] = true;
-            $_SESSION['role'] = $user['role']; // contoh: 'admin'
+            $_SESSION['role'] = $user['role'];
             $_SESSION['email'] = $user['email'];
 
             header("Location: ../dashboard/index.php?pesan=login_berhasil");
-            exit();
+            exit;
         } else {
-            echo "Password salah.";
+            $_SESSION['error'] = "Password salah.";
+            header("Location: index.php");
+            exit;
         }
     } else {
-        echo "Email tidak ditemukan.";
+        $_SESSION['error'] = "Email tidak ditemukan.";
+        header("Location: index.php");
+        exit;
     }
 }
 ?>

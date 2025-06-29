@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,6 @@
 </head>
 <body>
     <?php 
-        session_start();
         include '../navbar.php';
     ?>
 
@@ -32,7 +34,7 @@
                 <h1 class="">Tambah Berita/Blog Baru</h1>
             </div>
             <div class="button-kembali border shadow-lg p-3 rounded-xl font-bold text-[0.8rem] hover:bg-slate-50">
-                <a href="../dashboard"><i class="bi bi-arrow-left"></i> Kembali ke halaman Dashboard</a>
+                <a href="../dashboard/index.php"><i class="bi bi-arrow-left"></i> Kembali ke halaman Dashboard</a>
             </div>
         </div>
 <section class="form px-8">

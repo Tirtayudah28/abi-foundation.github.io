@@ -1,13 +1,13 @@
+<?php 
+  session_start();
+  include '../config/koneksi.php';
+?>
+
 <?php if (isset($_GET['pesan']) && $_GET['pesan'] === 'belum_login') : ?>
   <div id="alertLogin" class="w-full bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 animate__animated animate__fadeInDown text-center" role="alert">
     <strong>Oops!</strong> Anda harus login terlebih dahulu.
   </div>
 <?php endif; ?>
-
-<?php 
-  include '../config/koneksi.php';
-  session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -43,27 +43,28 @@
       <p class="text-sm text-blue-600">Masukkan kredensial akun admin Anda</p>
     </div>
 
-    <form action="proses-login.php" method="post" class="space-y-4">
-      <div>
-        <label class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
-        <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200" placeholder="admin@email.com">
-      </div>
+    <form action="proses-login.php" method="POST" class="space-y-4">
+  <div>
+    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+    <input type="email" name="email" id="email" required
+           class="w-full border px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300" />
+  </div>
 
-      <div>
-        <label class="block text-sm font-semibold text-gray-700 mb-1">Password</label>
-        <input type="password" name="password" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-blue-200" placeholder="••••••••">
-      </div>
+  <div class="relative">
+    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+    <input type="password" name="password" id="password" required
+           class="w-full border px-3 py-2 pr-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300" />
+    <button type="button" onclick="togglePassword()" class="absolute right-3 top-9 text-gray-500 hover:text-blue-700">
+      <i id="icon-eye" class="bi bi-eye"></i>
+    </button>
+  </div>
 
-      <div class="flex items-center justify-between text-sm">
-        <label class="flex items-center gap-2">
-          <input type="checkbox" class="form-checkbox border-gray-300 rounded text-blue-600">
-          Ingat saya
-        </label>
-        <a href="#" class="text-blue-600 hover:underline">Lupa password?</a>
-      </div>
+  <button type="submit" name="login"
+          class="w-full border-2 border-blue-800 hover:text-white hover:bg-blue-800 text-blue-800 py-2 rounded-md font-bold">
+    LOGIN
+  </button>
+</form>
 
-      <button type="submit" name="login" class="w-full border border-blue-900 shadow-lg text-blue-700 font-bold hover:text-white py-2 rounded-md hover:bg-blue-900 transition">Masuk</button>
-    </form>
   </div>
 </div>
 
@@ -74,7 +75,7 @@
 
 <!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
 
@@ -86,6 +87,20 @@
       setTimeout(() => alertBox.remove(), 600);
     }
   }, 4000);
+
+  function togglePassword() {
+    const input = document.getElementById("password");
+    const icon = document.getElementById("icon-eye");
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.remove("bi-eye");
+      icon.classList.add("bi-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.remove("bi-eye-slash");
+      icon.classList.add("bi-eye");
+    }
+  }
 </script>
 
 </body>

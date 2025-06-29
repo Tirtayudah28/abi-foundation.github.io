@@ -1,4 +1,6 @@
-
+<?php 
+      session_start();
+?>
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -25,7 +27,6 @@
 
    <!-- section navbar -->
     <?php 
-      session_start();
       include '../navbar.php';
     ?>
 
@@ -100,7 +101,7 @@
     include '../footer.php';
   ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="liputan-media.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>

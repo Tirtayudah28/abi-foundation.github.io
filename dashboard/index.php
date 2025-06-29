@@ -6,9 +6,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
     header("Location: ../login?pesan=belum_login"); // arahkan ke halaman login
     exit();
 }
-
 ?>
-
 <?php if (isset($_GET['pesan']) && $_GET['pesan'] === 'login_berhasil') : ?>
   <div
     id="loginSuccess"
@@ -77,7 +75,16 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
 <div class="container-dashboard bg-none" style="margin-top: 10rem;">
     <div class="text-welcome m-8">
         <h1 class="text-blue-800 font-bold text-[3rem] max-sm:text-[2.562]" data-aos="fade-down" data-aos-delay="100">ABI Foundation</h1>
-        <span class="text-slate-600 text-[1.2]" data-aos="fade-right" data-aos-delay="300">Selamat Datang, Admin</span>
+        <span class="text-slate-600 text-[1.2] flex items-center gap-2" data-aos="fade-right" data-aos-delay="300">
+        <?php if ($_SESSION['role'] === 'admin'): ?>
+            <i class="bi bi-shield-lock text-blue-700"></i>
+        <?php elseif ($_SESSION['role'] === 'editor'): ?>
+            <i class="bi bi-pencil text-green-700"></i>
+        <?php else: ?>
+            <i class="bi bi-person-circle text-gray-700"></i>
+        <?php endif; ?>
+        Selamat Datang, <?= ucfirst(htmlspecialchars($_SESSION['role'])) ?>
+        </span>
     </div>
 
     <div class="wrapper-box m-8 ">
@@ -129,8 +136,8 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
             border border-neutral-50 rounded-xl w-80 max-sm:w-full" data-aos="fade-right" data-aos-delay="200">
                     <?php
 
-                        // Ambil total publikasi dari database
-                        $query = "SELECT COUNT(*) as total FROM users";
+                        // Ambil total user dari database
+                        $query = "SELECT COUNT(*) as total FROM users_admin";
                         $result = mysqli_query($koneksi, $query);
                         $data = mysqli_fetch_assoc($result);
                         $totalusers = $data['total'];
@@ -138,7 +145,7 @@ if (!isset($_SESSION['login']) || $_SESSION['login'] !== true) {
                 <div class="site-left-box flex flex-col ">
                     <span class="text-[1rem] font-bold text-stone-950">PENGGUNA TERDAFTAR</span>
                     <span class="text-[1.563rem] font-bold"><?= $totalusers ?></span>
-                    <a href="#" class="text-yellow-600 text-sm font-medium mt-5 inline-block hover:underline">kelola pengguna</a>
+                    <a href="kelola-pengguna.php" class="text-yellow-600 text-sm font-medium mt-5 inline-block hover:underline">kelola pengguna</a>
                 </div>
                 <div class="site-right-box ">
                     <div class="logo">
